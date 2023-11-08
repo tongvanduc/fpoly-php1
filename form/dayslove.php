@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,9 +26,11 @@
         <form action="./handleDayslove.php" method="POST">
             <label for="man">Bạn Nam</label>
             <input type="text" class="form-control" name="man" id="man">
+            <p style="color: red;"><?= $_SESSION['nam'] ?? ''; ?></p>
 
             <label for="women" class="mt-2">Bạn Nữ</label>
             <input type="text" class="form-control" name="women" id="women">
+            <p style="color: red;"><?= $_SESSION['nu'] ?? ''; ?></p>
 
             <label for="start_love" class="mt-2">Start Love</label>
             <input type="date" class="form-control" name="start_love" id="start_love">
