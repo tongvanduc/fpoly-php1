@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD
 // trim — Strip whitespace (or other characters) from the beginning and end of a string
 
-=======
->>>>>>> e763863ef1df2045451f770161783f3603232efb
 // html_entity_decode — Convert HTML entities to their corresponding characters
 
 // htmlentities — Convert all applicable characters to HTML entities
