@@ -32,6 +32,8 @@
 
             <label for="img" class="mt-2">Img</label>
             <input type="file" class="form-control" name="img" id="img">
+            <input type="hidden" name="img-current" id="img-current" value="<?= $result['img'] ?>">
+            <img src="<?= $result['img'] ?>" width="100px" alt=""> <br/>
 
             <label for="is_active" class="mt-2">Is Active</label>
             <select name="is_active" id="is_active" class="form-control">
