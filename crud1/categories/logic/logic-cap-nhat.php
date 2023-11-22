@@ -29,11 +29,10 @@ try {
         // Upload file lên để lưu trữ
         if (move_uploaded_file($img['tmp_name'], $pathUpload)) {
             $pathSaveDB = 'uploads/' . $img['name'];
-            $stmt->bindParam(':img', $pathSaveDB);
         }
     }
 
-    $stmt->bindParam(':img', $_POST['img-current']);
+    $stmt->bindParam(':img', $pathSaveDB);
 
     $stmt->execute();
 
