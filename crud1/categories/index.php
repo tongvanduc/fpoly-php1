@@ -58,7 +58,12 @@
                 <td>
                     <a href="update.php?id=<?= $value['id'] ?>">Cập nhật</a>
 
-                    
+                    <form action="delete.php?id=<?= $value['id'] ?>" method="POST">
+                        <input type="hidden" name="img" value="<?= $value['img'] ?>">
+
+                        <button type="submit" 
+                                onclick="return confirm('Có chắn chắn xóa không?')">Xóa</button>
+                    </form>
                 </td>
             </tr>
 

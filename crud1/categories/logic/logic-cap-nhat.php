@@ -36,6 +36,10 @@ try {
 
     $stmt->execute();
 
+    if ($_POST['img-current'] && $_POST['img-current'] != $pathSaveDB) {
+        unlink($_POST['img-current']);
+    }
+
     header('Location: ../index.php');
 } catch (Exception $e) {
     die($e->getMessage());
