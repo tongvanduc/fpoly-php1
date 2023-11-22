@@ -20,20 +20,20 @@ try {
     $stmt->bindParam(':id', $_POST['id']);
 
     $img = $_FILES['img'] ?? null;
+    $pathSaveDB = $_POST['img-current']; // Lưu lại giá trị ảnh hiện tại
+
     // Xử lý upload ảnh
     if ($img) { // Khi mà có upload ảnh lên thì mới xử lý upload
         $pathUpload = '../uploads/' . $img['name'];
-        $pathSaveDB = 'uploads/' . $img['name'];
 
         // Upload file lên để lưu trữ
         if (move_uploaded_file($img['tmp_name'], $pathUpload)) {
+            $pathSaveDB = 'uploads/' . $img['name'];
             $stmt->bindParam(':img', $pathSaveDB);
-        } else {
-            $stmt->bindParam(':img', $_POST['img-current']);
         }
-    } else {
-        $stmt->bindParam(':img', $_POST['img-current']);
     }
+
+    $stmt->bindParam(':img', $_POST['img-current']);
 
     $stmt->execute();
 
