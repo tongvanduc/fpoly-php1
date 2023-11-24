@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách Danh mục</title>
+    <title>Danh sách Ô tô</title>
 
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 
             <?php require_once 'logic/logic-danh-sach.php'; ?>
 
-            <h1>Danh sách danh mục</h1>
+            <h1>Danh sách Ô tô</h1>
             
             <a class="btn btn-success" href="../index.php">Quay về tổng quan</a>
             <a class="btn btn-info mt-2" href="create.php">Thêm mới</a>
@@ -30,9 +30,10 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>SKU</th>
                         <th>Name</th>
+                        <th>Brand</th>
                         <th>Img</th>
-                        <th>IsActive</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -41,19 +42,20 @@
                     <?php foreach ($result as $key => $value) : ?>
 
                         <tr>
-                            <td><?= $value['id'] ?></td>
-                            <td><?= $value['name'] ?></td>
+                            <td><?= $value['c_id'] ?></td>
+                            <td><?= $value['c_sku'] ?></td>
+                            <td><?= $value['c_name'] ?></td>
                             <td>
-                                <img src="<?= $value['img'] ?>" width="100px" alt="">
+                                <?= $value['b_name'] ?>
                             </td>
                             <td>
-                                <?= $value['is_active'] ? 'Yes' : 'No'  ?>
+                                <img src="<?= $value['c_img'] ?>" width="100px" alt="">
                             </td>
                             <td>
-                                <a class="btn btn-success" href="update.php?id=<?= $value['id'] ?>">Cập nhật</a>
+                                <a class="btn btn-success" href="update.php?id=<?= $value['c_id'] ?>">Cập nhật</a>
 
-                                <form action="delete.php?id=<?= $value['id'] ?>" method="POST">
-                                    <input type="hidden" name="img" value="<?= $value['img'] ?>">
+                                <form action="delete.php?id=<?= $value['c_id'] ?>" method="POST">
+                                    <input type="hidden" name="img" value="<?= $value['c_img'] ?>">
 
                                     <button class="btn btn-danger mt-2" type="submit" onclick="return confirm('Có chắn chắn xóa không?')">Xóa</button>
                                 </form>
