@@ -22,6 +22,7 @@
                 <a class="btn btn-info" href="categories/index.php">Danh mục</a>
                 <a class="btn btn-primary" href="brands/index.php">Thương hiệu</a>
                 <a class="btn btn-danger" href="cars/index.php">Ô tô</a>
+                <a class="btn btn-warning" href="posts/index.php">Bài viết</a>
             </nav>
         </div>
     </div>
