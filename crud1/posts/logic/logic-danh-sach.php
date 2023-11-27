@@ -7,11 +7,10 @@ try {
                 p.id as p_id, 
                 p.name as p_name, 
                 p.img as p_img, 
-                p.sku as p_sku, 
-                b.name as b_name
+                c.name as c_name
             FROM posts as p
             INNER JOIN categories as c
-                ON c.id = p.brand_id 
+                ON c.id = p.category_id 
             ORDER BY p.id DESC;";
 
     $stmt = $conn->prepare($sql);

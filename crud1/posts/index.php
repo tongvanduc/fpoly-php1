@@ -30,7 +30,6 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>SKU</th>
                         <th>Name</th>
                         <th>Category</th>
                         <th>Img</th>
@@ -43,7 +42,6 @@
 
                         <tr>
                             <td><?= $value['p_id'] ?></td>
-                            <td><?= $value['p_sku'] ?></td>
                             <td><?= $value['p_name'] ?></td>
                             <td>
                                 <?= $value['c_name'] ?>
