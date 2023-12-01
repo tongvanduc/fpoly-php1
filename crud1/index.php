@@ -1,3 +1,14 @@
+<?php 
+
+require_once 'session.php';
+
+if (empty($_SESSION['user'])) {
+    header('Location: login.php');
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +34,8 @@
                 <a class="btn btn-primary" href="brands/index.php">Thương hiệu</a>
                 <a class="btn btn-danger" href="cars/index.php">Ô tô</a>
                 <a class="btn btn-warning" href="posts/index.php">Bài viết</a>
+
+                <a class="btn btn-danger" href="logout.php">Đăng Xuất</a>
             </nav>
         </div>
     </div>
